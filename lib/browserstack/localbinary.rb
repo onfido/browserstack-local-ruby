@@ -6,7 +6,7 @@ require 'tmpdir'
 require 'browserstack/localexception'
 
 module BrowserStack
-  
+
 class LocalBinary
   def initialize
     host_os = RbConfig::CONFIG['host_os']
@@ -15,7 +15,7 @@ class LocalBinary
       @windows = true
       "https://s3.amazonaws.com/browserStack/browserstack-local/BrowserStackLocal.exe"
     when /darwin|mac os/
-      "https://s3.amazonaws.com/browserStack/browserstack-local/BrowserStackLocal-darwin-x64"
+      "https://raw.githubusercontent.com/onfido/browserstack-local-ruby/test/binary-upgrade/lib/binaries/BrowserStackLocal-darwin-x64"
     when /linux/
       if 1.size == 8
         "https://s3.amazonaws.com/browserStack/browserstack-local/BrowserStackLocal-linux-x64"
