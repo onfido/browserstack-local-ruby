@@ -36,6 +36,8 @@ class LocalBinary
       Dir.mkdir dest_parent_dir
     end
     uri = URI.parse(@http_path)
+    puts "BrowserStackLocal url:"
+    puts @http_path
     binary_path = File.join(dest_parent_dir, "BrowserStackLocal#{".exe" if @windows}")
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
